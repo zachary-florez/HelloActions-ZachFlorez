@@ -1,18 +1,26 @@
+# The name displayed in the GitHub Actions tab.
 name: Hello World with Python
 
 
+# Events that start this workflow.
 on:
+
+  # Run when code is pushed to main.
   push:
     branches:
       - main
+      
+  # Allow the workflow to be started manually.
   workflow_dispatch:
 
 
 jobs:
+  # Define the job that runs the Python greeting.
   hello-python:
     name: Run the Python Hello World program
     runs-on: ubuntu-latest
 
+    # Steps to check out the code and run the program.
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
